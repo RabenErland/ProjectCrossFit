@@ -1,0 +1,39 @@
+.ui-icon-custom-menu {
+	background: url("images/menu.png") no-repeat rgba(0, 0, 0, 0.4) !important;	
+	background-color: rgba(0, 0, 0, 0) !important;
+    border: none !important;
+    box-shadow: none !important; 
+    width: 24px ;
+    height: 24px ;
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+	.ui-icon-custom-menu {
+		background: url("images/menu@2x.png") no-repeat rgba(0, 0, 0, 0.4)
+			!important;
+		background-size: 24px 24px;
+		border: none !important;
+		box-shadow: none !important;
+		width: 24px;
+		height: 24px;
+	}
+}
+
+/* Remove border around no-button custom icons */
+.ui-btn-inner {
+	border: none !important;
+}
+
+/* Remove background from filter box */
+.ui-listview-filter {
+	background-image: none !important;
+	background: transparent !important;
+	border: none !important;
+	margin-top: -10px;
+	margin-bottom: -10px;
+}
+
+.ui-li h1 {
+	color:#387bbe !important;
+}
+
