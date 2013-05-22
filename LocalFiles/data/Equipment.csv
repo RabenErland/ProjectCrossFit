@@ -1,0 +1,13 @@
+Id;Name;DisplayOrder;Alternatives;Icon
+1;kettlebell;1;;kettlebell.png
+2;jump rope;2;;jumprope.png
+3;pull-up bar;3;;pullupbar.png
+4;bench;5;;bench.png
+5;weight lifting bar;8;;liftingbar.png
+6;dumbbells;4;;dumbbells.png
+7;rowing machine;11;;rowingmachine.png
+8;climbing rope;10;;rope.png
+9;medicine ball;6;;medicineball.png
+10;rings;12;;rings.png
+11;dip bars;7;;dipbars.png
+12;box;9;;box.png
