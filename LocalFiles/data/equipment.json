@@ -1,0 +1,14 @@
+{ "equipment": [
+{"Id":"1","Name":"kettlebell","ShortName":"kettlebell","DisplayOrder":"1","Alternatives":"","Icon":"kettlebell.png"}
+,{"Id":"2","Name":"jump rope","ShortName":"jumprope","DisplayOrder":"2","Alternatives":"","Icon":"jumprope.png"}
+,{"Id":"3","Name":"pull-up bar","ShortName":"pullupbar","DisplayOrder":"3","Alternatives":"","Icon":"pullupbar.png"}
+,{"Id":"4","Name":"bench","ShortName":"bench","DisplayOrder":"5","Alternatives":"","Icon":"bench.png"}
+,{"Id":"5","Name":"weight lifting bar","ShortName":"weightliftingbar","DisplayOrder":"8","Alternatives":"","Icon":"weightliftingbar.png"}
+,{"Id":"6","Name":"dumbbells","ShortName":"dumbbells","DisplayOrder":"4","Alternatives":"","Icon":"dumbbells.png"}
+,{"Id":"7","Name":"rowing machine","ShortName":"rowingmachine","DisplayOrder":"11","Alternatives":"","Icon":"rowingmachine.png"}
+,{"Id":"8","Name":"climbing rope","ShortName":"climbingrope","DisplayOrder":"10","Alternatives":"","Icon":"climbingrope.png"}
+,{"Id":"9","Name":"medicine ball","ShortName":"medicineball","DisplayOrder":"6","Alternatives":"","Icon":"medicineball.png"}
+,{"Id":"10","Name":"rings","ShortName":"rings","DisplayOrder":"12","Alternatives":"","Icon":"rings.png"}
+,{"Id":"11","Name":"dip bars","ShortName":"dipbars","DisplayOrder":"7","Alternatives":"","Icon":"dipbars.png"}
+,{"Id":"12","Name":"box","ShortName":"box","DisplayOrder":"9","Alternatives":"","Icon":"box.png"}
+] }
