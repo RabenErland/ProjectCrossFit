@@ -12,9 +12,10 @@
 <script src="js/projectcrossfit.js"></script>
 <script>
 //Hook to the pagecreate event to inject html
-$(document).on("pagebeforecreate", function(e, data) {				
-	loadEquipmentHtmlFromJson();
-});
+
+	$(document).on("pagebeforecreate", function(e, data) {
+		loadEquipmentHtmlFromJson();
+	});
 </script>
 
 </head>
@@ -45,8 +46,11 @@ $(document).on("pagebeforecreate", function(e, data) {
 
 		<div data-role="content">			
 					
+			<h3>Choose your equipment</h3>
 			<ul id="equipmentList" data-role="listview" data-theme="a" data-inset="true">
-				
+			
+				<!-- html will be injected here -->
+
 			</ul>		
 	
 

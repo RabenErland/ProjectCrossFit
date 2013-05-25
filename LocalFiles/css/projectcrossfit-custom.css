@@ -1,10 +1,12 @@
+/* Menu - icon */
 .ui-icon-custom-menu {
-	background: url("images/menu.png") no-repeat rgba(0, 0, 0, 0.4) !important;	
+	background: url("images/menu.png") no-repeat rgba(0, 0, 0, 0.4)
+		!important;
 	background-color: rgba(0, 0, 0, 0) !important;
-    border: none !important;
-    box-shadow: none !important; 
-    width: 24px ;
-    height: 24px ;
+	border: none !important;
+	box-shadow: none !important;
+	width: 24px;
+	height: 24px;
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
@@ -18,6 +20,7 @@
 		height: 24px;
 	}
 }
+/* Menu - icon - end */
 
 /* Remove border around no-button custom icons */
 .ui-btn-inner {
@@ -33,7 +36,43 @@
 	margin-bottom: -10px;
 }
 
+/* Make headings blue */
 .ui-li h1 {
-	color:#387bbe !important;
+	color: #387bbe !important;
 }
 
+/* Add right border to thumbnail images */
+.ui-li-custom-equipment img { 
+	height: 50px !important;
+}
+
+.ui-li-custom-equipment div {
+	width: 100% !important;
+}
+
+.ui-li-custom-equipment a {
+	padding: 0px 0px 0px 80px !important;
+	display: -webkit-box !important; */
+	display: box !important;
+	-webkit-box-align: center !important;
+	box-align: center !important;
+}
+.ui-li-custom-equipment { /* 	padding: 0.7em 5px !important; */
+	height: 50px !important;
+	text-transform: capitalize !important;
+	padding-top: 0.2em !important;
+	padding-bottom: 0.2em !important;
+}
+
+.checkmark-image-overlay {
+	background:transparent url(../data/checkmark.png) no-repeat center;
+	background-size:50px 50px;
+	display:block;
+	height:50px;
+	width:50px;
+	position:absolute;	
+	text-decoration:none;
+	opacity: 0.8;
+	left: 0px;
+	top: 0px;
+}
