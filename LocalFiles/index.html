@@ -13,9 +13,16 @@
 <script src="js/projectcrossfit.js"></script>
 <script>
 	//Hook to the pagecreate event to inject html
-	$(document).on("pagebeforecreate", function(e, data) {	
-		loadEquipmentHtmlFromJson();			
+	$(document).on("pagecreate", function(e, data) {	
+		loadEquipmentHtmlFromJson();		
+		loadWodHtmlFromJson();
+		
+		//Bind to pageshow on woddetail
+		$("#woddetail").on("pageshow", function(e, data) {	        
+			alert(window.wodLookup["1"].getStorageKey());
+		});
 	});
+	
 	
 	// Bind to mobile back button - go back or close app depending on active page 
 	document.addEventListener(

@@ -57,7 +57,7 @@
 	-webkit-box-align: center !important;
 	box-align: center !important;
 }
-.ui-li-custom-equipment { /* 	padding: 0.7em 5px !important; */
+.ui-li-custom-equipment {
 	height: 50px !important;
 	text-transform: capitalize !important;
 	padding-top: 0.2em !important;
@@ -75,4 +75,13 @@
 	opacity: 0.8;
 	left: 0px;
 	top: 0px;
+}
+
+.ui-li-customwod a {
+padding-bottom:0.4em !important;
+padding-top:0.4em !important;
+}
+
+.ui-li-customwod p {
+margin-bottom:0.7em !important;
 }

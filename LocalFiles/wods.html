@@ -10,10 +10,16 @@
 <script src="js/jquery-1.9.1.min.js"></script>
 <script src="js/jquery.mobile-1.3.1.min.js"></script>
 <script src="js/projectcrossfit.js"></script>
+<script>
+	//Hook to the pagecreate event to inject html
+	$(document).on("pagecreate", function(e, data) {	
+		loadWodHtmlFromJson();
+	});
+</script>
 </head>
 
 <body>
-	<div data-role="page" id="home">
+	<div data-role="page" id="wodPage">
 
 		<!-- common -->
 		<div data-role="panel" id="menupanel" data-position="left"
@@ -37,18 +43,12 @@
 		</div>
 		
 		<div data-role="content">	
-			<ul id="wodList" data-role="listview" data-theme="a" data-inset="true" data-filter="true" data-filter-theme="d">
-				<li><a href="woddetail.html">						
-						<h2 >Fran</h2> 
-						<p class="ui-li-desc"> 21-15-9 of the following</p>
-						<p class="ui-li-desc">Thrusters, Strict pull-ups</p>
-				</a></li>
-				<li><a href="woddetail.html">						
-						<h2 >Karen</h2>
-						<p class="ui-li-desc"> 21-15-9 of the following</p>
-						<p class="ui-li-desc">Thrusters, Strict pull-ups</p>
-				</a></li>
+			<ul id="wodList" class="ui-li-customwod" data-role="listview" data-theme="a" data-inset="true" data-filter="true" data-filter-theme="d">
+			
+				<!-- Html will be injected here -->
+			
 			</ul>
+				
 		</div>
 	</div>
 	<!-- /main page -->
