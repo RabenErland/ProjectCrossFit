@@ -1,0 +1,11 @@
+{ "wods": [
+{"Id":"1","Name":"Fran","ShortName":"","Type":"Time","Work":"","Rest":"","Rounds":"","Exercises":"For time: 21-15-9 [thrusters], [pull-ups]"}
+,{"Id":"2","Name":"Angie","ShortName":"","Type":"Time","Work":"","Rest":"","Rounds":"","Exercises":"For time: 100 [pull-ups], 100 [push-ups], 100 [air squats], 100 [sit ups]"}
+,{"Id":"3","Name":"Tiger","ShortName":"","Type":"Tabata","Work":"20","Rest":"10","Rounds":"8","Exercises":"Tabata this: [push-ups], [wall-balls], [kettlebell swings], [thrusters]"}
+,{"Id":"4","Name":"Lion","ShortName":"","Type":"Time","Work":"","Rest":"","Rounds":"4","Exercises":"For time: 10 [toes 2 bar], 15 [boxjumps], 20 [wallbals]"}
+,{"Id":"5","Name":"Lynne","ShortName":"","Type":"Rounds","Work":"","Rest":"","Rounds":"5","Exercises":"5 rounds not for time: Max reps [benchpress] @BW, Max reps strict [pullups]"}
+,{"Id":"6","Name":"Hounddog","ShortName":"","Type":"Amrap","Work":"120","Rest":"60","Rounds":"3","Exercises":"3 X Amrap 2: [Burpees], 60 sec rest between AMRAPs"}
+,{"Id":"7","Name":"Killerbee","ShortName":"","Type":"OTM","Work":"","Rest":"","Rounds":"20","Exercises":"On the minute: Odd: 10 [russian swings], 10 [double unders]. Even: 10 [goblet squats], 10 [double unders]"}
+,{"Id":"8","Name":"Helen","ShortName":"","Type":"Time","Work":"","Rest":"","Rounds":"","Exercises":"For time: 400 m [run], 21 [kettlebell swings], 12 [pullups]"}
+,{"Id":"9","Name":"Birdie","ShortName":"","Type":"Time","Work":"","Rest":"","Rounds":"","Exercises":"For time. 21-15-9 [goblet squats], [burpees]"}
+] }
