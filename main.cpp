@@ -32,6 +32,18 @@ public:
 		// BEEP_WAV is defined in file Resources/Resources.lst.
 		setBeepSound(BEEP_WAV);
 	}
+
+	virtual void keyPressEvent(int keyCode, int nativeCode)
+	{
+		//Check if menubutton has been pressed
+		if (nativeCode == 82 &&  keyCode == 293 ) {
+			callJS("toggleMenu()");
+		}
+		else{
+			// If not - forward to PhoneGap MessageHandler.
+			HybridMoblet::keyPressEvent(keyCode, nativeCode);
+		}
+	}
 };
 
 /**
