@@ -22,6 +22,55 @@
 }
 /* Menu - icon - end */
 
+.menu-icon {
+    background: url(images/menu.png) no-repeat center;
+    background-size: 24px 24px;
+    width:38px;
+    height:38px;
+    display: inline;
+    border:0px !important;
+    cursor:pointer;
+}
+
+.play-icon {
+     background: url(images/play.png) no-repeat center;
+     background-size: 72px 72px;
+     width:72px;
+     height:72px;
+     display: block;
+     border:0px !important;
+     cursor:pointer;
+ }
+
+.pause-icon {
+    background: url(images/pause.png) no-repeat center;
+    background-size: 72px 72px;
+    width:72px;
+    height:72px;
+    display: block;
+    border:0px !important;
+    cursor:pointer;
+}
+
+.badge-icon {
+    background: url(images/badge.png) no-repeat center;
+    background-size: 18px 18px;
+    width:32px;
+    height:32px;
+    display: block;
+    float: left;
+}
+
+.timer-icon {
+    background: url(images/timer.png) no-repeat center;
+    background-size: 18px 18px;
+    width:32px;
+    height:32px;
+    display: block;
+    float: left;
+}
+
+
 /* Remove border around no-button custom icons */
 .ui-btn-inner {
 	border: none !important;
@@ -52,7 +101,7 @@
 
 .ui-li-custom-equipment a {
 	padding: 0px 0px 0px 80px !important;
-	display: -webkit-box !important; */
+	display: -webkit-box !important;
 	display: box !important;
 	-webkit-box-align: center !important;
 	box-align: center !important;
@@ -78,10 +127,88 @@
 }
 
 .ui-li-customwod a {
-padding-bottom:0.4em !important;
-padding-top:0.4em !important;
+    padding-bottom:0.4em !important;
+    padding-top:0.4em !important;
 }
 
 .ui-li-customwod p {
-margin-bottom:0.7em !important;
+    margin-bottom:0.7em !important;
+}
+
+.ui-menubutton {
+	height: 36px !important;
+	width: 36px !important;
+}
+
+.ui-li-customsinglewod {
+    padding-top: 1.2em !important;
+    padding-bottom: 1.2em !important;
+}
+
+.ui-li-customsinglewod p {
+    margin-bottom: 0.8em;
+    text-indent: 1.2em;
+}
+
+.ui-table th, .ui-table td {
+    padding-left: 0em !important;
+    padding-right: 0em !important;
+    line-height:32px;
+}
+
+.first-column {
+    border: 0px !important;
+    width: 32px !important;
+}
+
+.div-single-wod-exercises {
+    padding-left:32px;
+}
+
+.div-single-wod-exercises p {
+    -webkit-margin-before: 0.3em;
+    -webkit-margin-after: 0.3em;
+}
+
+.div-single-wod-first-line {
+    height:32px;
+    line-height:32px
+}
+
+.div-single-wod-first-line p {
+    font-style: italic;
+    text-indent: 0em !important;
+    margin-bottom: 1.2em !important;
+    -webkit-margin-before: 0.2em !important;
+}
+
+.div-single-wod-breaker {
+    /*border-bottom: 1px solid rgba(0,0,0,.05);*/
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+
+.styled div {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 60px;
+    font-weight: 100;
+    line-height: 1;
+    text-align: right;
+}
+
+.styled div span {
+    display: block;
+    border-top: 1px solid #cecece;
+    padding-top: 3px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: right;
+}
+
+.styled span {
+    display: block;
+    padding-top: 3px;
 }
