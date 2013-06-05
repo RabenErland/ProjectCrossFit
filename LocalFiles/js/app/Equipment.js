@@ -1,44 +1,33 @@
-/* Equipment class */
-var Equipment = function (equipmentJson) {
-    this.equipmentJson = equipmentJson;
-};
+define("Equipment", [], function() {
 
-Equipment.getLookupStorageKey = function (equipmentId) {
-    return "projectCrossFit_Equipment" + equipmentId;
-};
+    var Equipment = function (equipmentJson) {
+        this.equipmentJson = equipmentJson;
+    };
 
-Equipment.storeVisibilityInStorage = function (equipmentId, visibility) {
-    var key = Equipment.getLookupStorageKey(equipmentId);
-    localStorage.setItem(key, visibility);
-};
+    Equipment.getLookupStorageKey = function (equipmentId) {
+        return "projectCrossFit_Equipment" + equipmentId;
+    };
 
-Equipment.prototype.getLookupStorageKey = function () {
-    return Equipment.getLookupStorageKey(this.equipmentJson.Id);
-};
+    Equipment.storeVisibilityInStorage = function (equipmentId, visibility) {
+        var key = Equipment.getLookupStorageKey(equipmentId);
+        localStorage.setItem(key, visibility);
+    };
 
-Equipment.prototype.isVisible = function () {
-    var key = this.getLookupStorageKey();
-    var val = localStorage.getItem(key);
-    return val != "undefined" && val == "false";
-};
+    Equipment.prototype.getJson = function() {
+        return this.equipmentJson;
+    }
 
-Equipment.prototype.createListHtml = function () {
-    //Determine if the equipment item should be shown
-    var displayStyle = "";
+    Equipment.prototype.getLookupStorageKey = function () {
+        return Equipment.getLookupStorageKey(this.equipmentJson.Id);
+    };
 
-    if (this.isVisible())
-        displayStyle = ' style="display:none"';
+    Equipment.prototype.isVisible = function () {
+        var key = this.getLookupStorageKey();
+        var val = localStorage.getItem(key);
+        return val != "undefined" && val == "false";
+    };
 
-    var html =
-        '<li data-icon="false" class="ui-li-custom-equipment">' +
-            '<a href="#" class="equipment-clickable" data-equipmentId=' + this.equipmentJson.Id + '>' +
-            '<img src="data/' + this.equipmentJson.Icon + '">' +
-            '<span class="checkmark-image-overlay"' + displayStyle + '></span>' +
-            this.equipmentJson.Name +
-            '</a>' +
-            '</li>';
-    return html;
-};
-/* End of - Equipment class */
+    return Equipment;
+});
 
 

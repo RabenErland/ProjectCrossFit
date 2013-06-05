@@ -9,67 +9,70 @@
     <link rel="stylesheet" href="css/projectcrossfit-custom.css" />
     <script src="js/lib/jquery-1.9.1.min.js"></script>
     <script src="js/lib/jquery.mobile-1.3.1.min.js"></script>
-
-    <script src="js/app/DateFormatter.js"></script>
-    <script src="js/app/Equipment.js"></script>
-    <script src="js/app/Wod.js"></script>
-    <script src="js/app/WodTracker.js"></script>
-    <script src="js/app/ObjectFactory.js"></script>
-    <script src="js/app/HtmlInjector.js"></script>
-    <script src="js/app/Timer.js"></script>
-    <script src="js/app/Setup.js"></script>
+    <script src="js/lib/require-2.1.6.min.js" data-main="js/app"></script>
 </head>
 
 <body id="body">
-	<div data-role="page" id="home">
+<div data-role="page" id="home">
 
-		<!-- common -->
-		<div data-role="panel" id="menupanel" data-position="left"
-			data-display="overlay"  data-theme="b">
-			<ul data-role="listview" class="ui-icon-alt"  data-theme="b">
-				<li><a href="index.html">Recommendation</a></li>
-				<li data-role="list-divider">You</li>
-				<li><a href="equipment.html">Your equipment</a></li>
-				<li><a href="targets.html">Your targets</a></li>
-				<li data-role="list-divider">Library</li>
-				<li><a href="wods.html">WOD List</a></li>
-				<li><a href="exercises.html">Exercise List</a></li>
-			</ul>
-		</div>
-		<!-- end of common -->
+    <!-- common -->
+    <div data-role="panel" id="menupanel" data-position="left"
+         data-display="overlay"  data-theme="b">
+        <ul data-role="listview" class="ui-icon-alt"  data-theme="b">
+            <li><a href="index.html">Recommendation</a></li>
+            <li data-role="list-divider">You</li>
+            <li><a href="equipment.html">Your equipment</a></li>
+            <li><a href="targets.html">Your targets</a></li>
+            <li data-role="list-divider">Library</li>
+            <li><a href="wods.html">WOD List</a></li>
+            <li><a href="exercises.html">Exercise List</a></li>
+        </ul>
+    </div>
+    <!-- end of common -->
 
-		<div data-role="header"  data-theme="a">
+    <div class="menupanel" data-role="header"  data-theme="a">
 
-            <a href="#menupanel" data-role="none" class=menu-icon style="width:32px; height: 32px"></a>
-            <p style="text-align: center; -webkit-margin-before:0.5em; -webkit-margin-after:0.5em">Project CrossFit</p>
+        <a href="#menupanel" data-role="none" class=menu-icon></a>
+        <p >Project CrossFit</p>
+    </div>
 
-		</div>
-
-		<div data-role="content">			
-
-					
-			<ul data-role="listview" data-theme="a" data-inset="true">
-				<li><a href="woddetail.html">
-						<h1>Recommended WOD</h1>
-						<h2 class="ui-li-heading">Fran</h2>
-						<p class="ui-li-desc">
-							<strong>21-15-9 of the following</strong>
-						</p>
-						<p class="ui-li-desc">Thrusters, Strict pull-ups</p>
-				</a></li>
-			</ul>
-
-			<p></p>
-		
-			
-			<a data-role="button" href="#" data-icon="refresh" data-mini="true" data-theme="a">
-				Suggest another WOD
-			</a>
+    <div data-role="content">
 
 
-		</div>
-	</div>
-	<!-- /main page -->
-	
+        <ul data-role="listview" data-theme="a" data-inset="false">
+            <li><a href="woddetail.html">
+                <h1>Recommended WOD</h1>
+                <h2 class="ui-li-heading">Fran</h2>
+                <p class="ui-li-desc">
+                    <strong>21-15-9 of the following</strong>
+                </p>
+                <p class="ui-li-desc">Thrusters, Strict pull-ups</p>
+
+            </a></li>
+            <li style="border-top: 0px !important">
+                Recommend another
+            </li>
+        </ul>
+
+        <br>
+        <br>
+        <table data-role="none" class="table-stroke ui-table">
+            <thead>
+            <tr>
+                <th id="thNumberCompleted">Recently completed</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody id="historyTableBody">
+            <!--INJECT-->
+            <tr><td>Sunday 4<sup>th</sup> March 2012 10:20</td><td>1 min 49 sec</td></tr><tr></tr><tr><td>Tuesday 28<sup>th</sup> May 2013 10:36</td><td>6 min 45 sec</td></tr><tr></tr></tbody>
+        </table>
+
+
+
+    </div>
+</div>
+<!-- /main page -->
+
 </body>
 </html>
