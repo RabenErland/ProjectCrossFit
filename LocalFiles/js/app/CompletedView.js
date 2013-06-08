@@ -27,7 +27,7 @@ define("CompletedView", ["WodTracker", "WodLookup", "HistoryView", "HtmlUtility"
 
                 //Insert history table content and header
                 var historyView = new HistoryView();
-                historyView.renderHistoryHtml(wod.getName());
+                historyView.renderWodHistoryHtml(wod.getName());
             }
         }
     }

@@ -9,9 +9,9 @@ define("WodLookup", ["Wod", "HtmlUtility"], function(Wod, htmlUtility) {
             wodList = result.wods;
         });
 
-    var wodLookup = {}
+    var wodLookup = []
     $.each(wodList, function(i, wodItem) {
-        wodLookup[wodItem.Id] = new Wod(wodItem);
+        wodLookup[parseInt(wodItem.Id)] = new Wod(wodItem);
     })
 
 
@@ -23,11 +23,16 @@ define("WodLookup", ["Wod", "HtmlUtility"], function(Wod, htmlUtility) {
             var id = htmlUtility.getIdFromQueryParam();
 
             if (id != undefined) {
-                var wod = wodLookup[id.toString()];
+                var wod = wodLookup[id];
                 return {wod: wod, id: id};
             }
 
             return null;
+        },
+
+        getRecommendedWod: function() {
+            return wodLookup[Math.floor(Math.random()*wodLookup.length)];
         }
+
     }
 });

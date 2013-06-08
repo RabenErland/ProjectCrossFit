@@ -1,6 +1,7 @@
 
 require.config({
-    baseUrl: "js/app"
+    baseUrl: "js/app",
+    urlArgs: "bust=" + (new Date()).getTime() //cache busting
 });
 
 

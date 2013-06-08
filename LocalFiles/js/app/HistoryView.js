@@ -3,14 +3,51 @@ define("HistoryView", ["HtmlUtility", "WodTracker"], function(htmlUtility, wodTr
     var HistoryView = function() {}
 
     HistoryView.prototype = {
-        renderHistoryHtml: function(wodName) {
-            //Insert history table header
-            var noCompleted = wodTracker.getNoTimesCompleted(wodName);
-            $('#thNumberCompleted').text('Completed ' + noCompleted + (noCompleted == 1 ? 'time' : ' times'));
+        renderHistoryHtml: function(noRecords) {
 
             //insert table content
-            var historyHtml = this.getHistoryHtml(wodName);
-            $(historyHtml).appendTo("#historyTableBody");
+            var historyHtml = this.getHistoryHtml(noRecords);
+
+            var tableHtml =
+                '<table data-role="none" class="table-stroke ui-table">' +
+                    '<thead>' +
+                        '<tr>' +
+                            '<th>Recently completed</th>' +
+                            '<th></th>' +
+                            '<th></th>' +
+                        '</tr>' +
+                    '</thead>' +
+                    '<tbody id="historyTableBody">' +
+                        historyHtml +
+                    '</tbody>' +
+                '</table>'
+
+            $('#historyTableDiv').html(tableHtml);
+        },
+
+        renderWodHistoryHtml: function(wodName) {
+
+            var noCompleted = wodTracker.getNoTimesCompleted(wodName);
+            var headerText = 'Completed ' + noCompleted + (noCompleted == 1 ? ' time' : ' times');
+
+            //insert table content
+            var historyHtml = this.getWodHistoryHtml(wodName);
+
+            var tableHtml =
+                '<table data-role="none" class="table-stroke ui-table">' +
+                    '<thead>' +
+                        '<tr>' +
+                            '<th class="first-column"></th>' +
+                            '<th id="thNumberCompleted">' + headerText + '</th>' +
+                            '<th></th>' +
+                        '</tr>' +
+                    '</thead>' +
+                    '<tbody id="historyTableBody">' +
+                        historyHtml +
+                    '</tbody>' +
+                '</table>'
+
+            $('#wodHistoryTableDiv').html(tableHtml);
         },
 
         renderPersonalBestHtml: function(wodName) {
@@ -32,7 +69,28 @@ define("HistoryView", ["HtmlUtility", "WodTracker"], function(htmlUtility, wodTr
             return '<span class="badge-icon"></span>' + bestText;
         },
 
-        getHistoryHtml: function (wodName) {
+        getHistoryHtml: function(noRecords) {
+            var records = wodTracker.getWodRecordList(noRecords);
+
+            var html = "";
+            for (var i = 0; i < records.length; i++) {
+                var record = records[i];
+                var wodName = record.wodName;
+                var dateHtml = htmlUtility.formatDateAsHtml(new Date(record.dateCompleted));
+                var timeHtml = htmlUtility.formatSecondsAsTime(record.time);
+
+                html +=
+                    '<tr>' +
+                        '<td>' + dateHtml + '</td>' +
+                        '<td style="text-align: left"><strong>' +  wodName + '</strong></td>' +
+                        '<td>' + timeHtml + '</td>' +
+                    '</tr>';
+            }
+
+            return html;
+        },
+
+        getWodHistoryHtml: function (wodName) {
 
             var records = wodTracker.getWodRecordsPerName(wodName);
 
@@ -41,8 +99,7 @@ define("HistoryView", ["HtmlUtility", "WodTracker"], function(htmlUtility, wodTr
             for (var i = 0; i < records.length; i++) {
                 var record = records[i];
 
-                var date = new Date(record.dateCompleted);
-                var dateHtml = htmlUtility.formatDateAsHtml(date);
+                var dateHtml = htmlUtility.formatDateAsHtml(new Date(record.dateCompleted));
                 var timeHtml = htmlUtility.formatSecondsAsTime(record.time);
 
                 var isBest = wodTracker.isPersonalBest(record);
@@ -52,7 +109,7 @@ define("HistoryView", ["HtmlUtility", "WodTracker"], function(htmlUtility, wodTr
                         '<td class="first-column">' + (isBest ? '<span class="badge-icon"></span>' : '') + '</td>' +
                         '<td>' + dateHtml + '</td>' +
                         '<td>' + timeHtml + '</td>' +
-                        '<tr>';
+                        '</tr>';
 
             }
             return html;

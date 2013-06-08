@@ -1,3 +1,5 @@
+/* Default font size */
+
 /* Menu - icon */
 .ui-icon-custom-menu {
 	background: url("images/menu.png") no-repeat rgba(0, 0, 0, 0.4)
@@ -33,14 +35,9 @@
 }
 
 .check-icon {
-    background: url(images/check.png) no-repeat center;
+    background: url(images/check.png) no-repeat left center;
     background-size: 30px 30px;
-    width:30px;
-    height:30px;
-    padding-right:15px;
-    display: inline;
-    border:0px !important;
-    float:left;
+    padding-left:40px;
 }
 
 .play-icon {
@@ -81,6 +78,25 @@
     float: left;
 }
 
+.reload-icon {
+    background: url(images/reload.png) no-repeat center;
+    background-size: 32px 32px;
+    width:50px;
+    height:32px;
+    display: inline-block;
+    vertical-align: middle;
+    opacity:0.3;
+}
+
+.goArrow-icon {
+    background: url(images/goArrow.png) no-repeat right center;
+    background-size: 64px 64px;
+    width:64px;
+    height:64px;
+    vertical-align: middle;
+    float: right;
+}
+
 
 /* Remove border around no-button custom icons */
 .ui-btn-inner {
@@ -92,13 +108,63 @@
 	background-image: none !important;
 	background: transparent !important;
 	border: none !important;
-	margin-top: -10px;
-	margin-bottom: -10px;
+}
+
+/* Make filter box span entire width */
+.ui-listview-filter div {
+    margin: 0px !important;
+    -webkit-border-radius: 0em !important;
+    border-radius: 0em !important;
 }
 
 /* Make headings blue */
-.ui-li h1 {
+.recommendation h1 {
 	color: #387bbe !important;
+    font-size: 18px;
+}
+
+.recommendation h2 {
+    font-size: 16px;
+    -webkit-margin-after: 0.2em;
+}
+
+.recommendation p {
+    font-size: 14px;
+}
+
+.recommendation-header {
+    line-height: 32px;
+    display: table-cell;
+}
+
+.recommendation-header h1 {
+    display:inline;
+    font-size: 20px;
+    vertical-align: middle;
+    color: #387bbe
+}
+
+.recommendation-content {
+    background: url(images/goArrow.png) no-repeat right center;
+    background-size: 48px 48px;
+}
+
+
+.recommendation {
+    background-color: #ffffff;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+    padding: 10px;
+
+    margin-bottom: 25px;
+    margin-left: -15px;
+    margin-right: -15px;
+    cursor:pointer;
+}
+
+/* Overwrite JQM size */
+.ui-li-heading {
+    font-size: 14px !important;
 }
 
 .ui-li-custom-equipment img { 
@@ -171,6 +237,10 @@
     line-height:32px;
 }
 
+.ui-table td {
+    font-size: 12px;
+}
+
 .first-column {
     border: 0px !important;
     width: 32px !important;
@@ -229,7 +299,7 @@
 }
 
 .menupanel a {
-    width:32px;
+    width: 32px;
     height: 32px;
 }
 
@@ -237,4 +307,5 @@
     text-align: center;
     -webkit-margin-before:0.5em;
     -webkit-margin-after:0.5em;
+    font-size: 16px;
 }

@@ -1,4 +1,4 @@
-define("TimerView", ["WodTracker", "WodLookup"], function(wodTracker, wodLookupGetter) {
+define("TimerView", ["WodTracker", "WodLookup", "WodView"], function(wodTracker, wodLookupGetter, WodView) {
 
     var TimerView = function () {
 
@@ -10,14 +10,21 @@ define("TimerView", ["WodTracker", "WodLookup"], function(wodTracker, wodLookupG
 
             //Set header
             $("#timerHeader").text(wod.getName().toUpperCase() + " in progress")
+
+            //Set single line description
+            var wodView = new WodView();
+            var wodHtml = wodView.getExerciseHtmlOnly(wod);
+
+            $("#exerciseDescription").html(wodHtml);
         }
 
         //Set initial variables
+        this.completeButton = $("#completeButton");
         this.spanPlayPause = $("#spanPauseResume");
-        this.reset();
+        this.resetTimer();
     }
 
-    TimerView.prototype.reset = function() {
+    TimerView.prototype.resetTimer = function() {
         if(this.setIntervalId != null) {
             clearInterval(this.setIntervalId);
         }
@@ -25,6 +32,8 @@ define("TimerView", ["WodTracker", "WodLookup"], function(wodTracker, wodLookupG
         this.lastTimerDate = null;
         this.setIntervalId = null;
         this.totalElapsedTime = 0;
+
+        this.completeButton.addClass("ui-disabled");
     }
 
     TimerView.prototype.handlePauseResume = function() {
@@ -34,6 +43,7 @@ define("TimerView", ["WodTracker", "WodLookup"], function(wodTracker, wodLookupG
             //Set initial time (if it has not been set)
             if(that.lastTimerDate == null) {
                 that.lastTimerDate = new Date();
+                that.completeButton.removeClass("ui-disabled");
             }
 
             //Start timer
@@ -73,7 +83,7 @@ define("TimerView", ["WodTracker", "WodLookup"], function(wodTracker, wodLookupG
 
         wodTracker.addWodRecord(this.wodAndId.wod.getName(), date, time);
 
-        this.reset()
+        this.resetTimer()
 
         $.mobile.changePage("completed.html?id=" + this.wodAndId.id);
 

@@ -52,18 +52,24 @@ define("WodView", ["WodLookup", "WodTracker", "HistoryView"],
                     var bestHtml = historyView.renderPersonalBestHtml(wod.getName());
 
                     //Insert history table content and header
-                    var historyHtml = historyView.renderHistoryHtml(wod.getName());
+                    var historyHtml = historyView.renderWodHistoryHtml(wod.getName());
 
                     $('#wodSingleList').listview('refresh');
                 }
 
             },
 
-            getDetailHtml: function (wod) {
+            getDetailHtml: function (wod, insertName) {
 
-                var remainingExerciseText = this.addParagraphs(wod.longFormatLines, 1);
+                var remainingExerciseText = this.combineLines(wod.longFormatLines, 1, true);
 
-                return '<div class="div-single-wod-first-line">' +
+                name = "";
+                if(insertName) {
+                    name = '<h2>' + wod.getName() + '</h2>';
+                }
+
+                return name +
+                    '<div class="div-single-wod-first-line">' +
                     '<p><span class="timer-icon"></span>' + wod.longFormatLines[0] + '</p>' +
                     '</div>' +
                     '<div class="div-single-wod-exercises">' +
@@ -72,13 +78,18 @@ define("WodView", ["WodLookup", "WodTracker", "HistoryView"],
             },
 
 
-            addParagraphs: function (lines, startIndex) {
+            combineLines: function (lines, startIndex, addParagraphs) {
                 var html = "";
 
                 //Insert paragraphs around each exercise but the first line
                 for (var i = startIndex; i < lines.length; i++) {
                     var text = lines[i];
-                    html += '<p>' + text + '</p>'
+                    if(addParagraphs) {
+                        html += '<p>' + text + '</p>'
+                    }
+                    else {
+                        html += text;
+                    }
                 }
 
                 return html;
@@ -86,7 +97,7 @@ define("WodView", ["WodLookup", "WodTracker", "HistoryView"],
 
             getSingleItemListHtml: function (wod) {
 
-                var remainingExerciseText = this.addParagraphs(wod.shortFormatLines, 1);
+                var remainingExerciseText = this.combineLines(wod.shortFormatLines, 1, true);
 
                 //Create html for list element with one-line exercise text
                 var html = '<li>' +
@@ -98,6 +109,11 @@ define("WodView", ["WodLookup", "WodTracker", "HistoryView"],
 
                 return html;
 
+            },
+
+            getExerciseHtmlOnly: function(wod) {
+                var remainingExerciseText = this.combineLines(wod.shortFormatLines, 1, false);
+                return '<i>' + wod.shortFormatLines[0] + '</i>' + remainingExerciseText;
             }
         };
 

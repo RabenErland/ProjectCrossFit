@@ -2,12 +2,19 @@ define("HtmlUtility", [], function() {
 
     var singleton = function () {
         return {
-            dateNames: new Array("Sunday", "Monday", "Tuesday",
-                "Wednesday", "Thursday", "Friday", "Saturday"),
+//            dateNames: new Array("Sunday", "Monday", "Tuesday",
+//                "Wednesday", "Thursday", "Friday", "Saturday"),
 
-            monthNames: new Array("January", "February", "March",
-                "April", "May", "June", "July", "August", "September",
-                "October", "November", "December"),
+            dateNames: new Array("Sun.", "Mon.", "Tue.",
+                "Wed.", "Thu.", "Fri.", "Sat."),
+//
+//            monthNames: new Array("January", "February", "March",
+//                "April", "May", "June", "July", "August", "September",
+//                "October", "November", "December"),
+
+            monthNames: new Array("Jan.", "Feb.", "Mar.",
+                "Apr.", "May.", "Jun.", "Jul.", "Aug.", "Sep.",
+                "Oct.", "Nov.", "Dec."),
 
             formatDateAsHtml: function (d) {
 

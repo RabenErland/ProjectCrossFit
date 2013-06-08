@@ -5,9 +5,13 @@ define("Wod", [], function() {
 
         this.shortFormatLines = [];
         this.longFormatLines = [];
-        this.exerciseLines = [];
+        this.exerciseNames = [];
 
         this.parseExerciseText();
+
+        this.requiredEquipmentNames = [];
+
+        this.parseRequiredEquipment();
     }
 
     Wod.getLookupStorageKey = function (wodId) {
@@ -40,6 +44,8 @@ define("Wod", [], function() {
             if (matchText == ":" || matchText == '.' || matchText == ",") {
                 //Add line break on : or . for short format and , for long format
 
+                shortFormatText +=  matchText;
+
                 this.longFormatLines.push(longFormatText);
 
                 if(matchText != ",") {
@@ -54,7 +60,7 @@ define("Wod", [], function() {
                 var currentExercise = matchText.substring(1, matchText.length - 1);
                 var formatted = '<strong>' + currentExercise + '</strong>';
 
-                this.exerciseLines.push(formatted);
+                this.exerciseNames.push(currentExercise);
                 longFormatText += formatted;
                 shortFormatText += formatted;
             }
@@ -71,6 +77,14 @@ define("Wod", [], function() {
     Wod.prototype.getName = function () {
         return this.wodJson.Name;
     };
+
+    Wod.prototype.parseRequiredEquipment = function() {
+          //TODO
+        //For each exercise - get list of required equipment names from ExerciseLookup
+        //combine to distinct list
+
+
+    }
 
     return Wod;
 });

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Project CrossFit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/jquery.mobile.structure-1.3.1.min.css" />
+    <link rel="stylesheet" href="css/projectcrossfit-theme.css" />
+    <link rel="stylesheet" href="css/projectcrossfit-custom.css" />
+    <script src="js/lib/jquery-1.9.1.min.js"></script>
+    <script src="js/lib/jquery.mobile-1.3.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+        var i = 0;
+
+
+
+        $("#progress").click(function() {
+            i = (i + 1) % 9;
+
+            var text = "Round " + i +  " of 8";
+            percent = (i/8)*100;
+            $("#bar").css("width", percent+"%");
+            $("#text").text(text);
+        });
+        });
+    </script>
+</head>
+<body>
+<div data-role="page" id="timerPage" data-url="/timer.html?id=1" data-external-page="true" tabindex="0" class="ui-page ui-body-c ui-page-panel ui-page-active" style="min-height: 411px;">
+
+    <!-- common -->
+    <div data-role="panel" id="menupanel" data-position="left" data-display="overlay" data-theme="b" class="ui-panel ui-panel-position-left ui-panel-display-overlay ui-panel-closed ui-body-b ui-panel-animate">
+        <div class="ui-panel-inner"><ul data-role="listview" class="ui-icon-alt ui-listview" data-theme="b">
+            <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="b" class="ui-btn ui-btn-up-b ui-btn-icon-right ui-li-has-arrow ui-li ui-first-child"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="index.html" class="ui-link-inherit">Recommendation</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+            <li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-bar-b">You</li>
+            <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="b" class="ui-btn ui-btn-up-b ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="equipment.html" class="ui-link-inherit">Your equipment</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+            <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="b" class="ui-btn ui-btn-up-b ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="targets.html" class="ui-link-inherit">Your targets</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+            <li data-role="list-divider" role="heading" class="ui-li ui-li-divider ui-bar-b">Library</li>
+            <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="b" class="ui-btn ui-btn-up-b ui-btn-icon-right ui-li-has-arrow ui-li"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="wods.html" class="ui-link-inherit">WOD List</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+            <li data-corners="false" data-shadow="false" data-iconshadow="true" data-wrapperels="div" data-icon="arrow-r" data-iconpos="right" data-theme="b" class="ui-btn ui-btn-up-b ui-btn-icon-right ui-li-has-arrow ui-li ui-last-child"><div class="ui-btn-inner ui-li"><div class="ui-btn-text"><a href="exercises.html" class="ui-link-inherit">Exercise List</a></div><span class="ui-icon ui-icon-arrow-r ui-icon-shadow">&nbsp;</span></div></li>
+        </ul></div>
+    </div>
+    <!-- end of common -->
+
+    <div class="ui-panel-content-wrap ui-body-c ui-panel-animate ui-panel-content-wrap-closed"><div data-role="header" data-theme="a" class="ui-header ui-bar-a" role="banner">
+        <h2 id="timerHeader" class="ui-title" role="heading" aria-level="1">FRAN in progress</h2>
+        <a href="#menupanel" data-icon="custom-menu" data-theme="reset" data-corners="false" data-shadow="false" class="ui-icon-nodisc ui-btn-left ui-btn ui-btn-up-reset ui-btn-icon-notext" data-iconpos="notext" data-iconshadow="true" data-wrapperels="span" title=""><span class="ui-btn-inner"><span class="ui-btn-text"></span><span class="ui-icon ui-icon-custom-menu ui-icon-shadow">&nbsp;</span></span></a>
+    </div><div id="timerPageContent" data-role="content" class="ui-content" role="main">
+
+
+
+
+        <div style="width:100%; text-align: center;font-size:28px; padding-bottom: 5px">
+            <strong>Thrusters</strong>
+        </div>
+        <div style="width:100%; text-align: center;font-size:16px; padding-bottom: 20px">
+            <i>Next up: Rest</i>
+        </div>
+        <div class="styled" style="width:100%; text-align: center; font-size:42px; font-weight: 100" id="divTimer2">
+            <div id="divSeconds">10<span>1 min 20 sec</span></div>
+            <div><span id="spanPauseResume" class="pause-icon"></span></div>
+        </div>
+        <div id="progress" style="margin: 0 auto; width: 200px; height: 30px; position: relative; margin-top: 20px">
+            <div style="width: 100%; height: 100%; position: absolute; top:0; left: 0; background-color: lightgray; -webkit-border-radius: 0.2em"></div>
+            <div id="bar" style="width: 0%; height: 100%; position: absolute; top:0; left: 0; background-color: cornflowerblue; -webkit-border-radius: 0.2em"></div>
+            <div id="text" style="width: 100%; height: 100%; line-height: 30px; color: black; position: absolute; top:0; left: 0;text-align:center">Round 0 of 8</div>
+        </div>
+
+    </div></div>
+
+
+
+    <div class="ui-panel-dismiss" data-panelid="menupanel"></div></div>
+</body>
+</html>

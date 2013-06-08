@@ -72,8 +72,12 @@ define("WodTracker", [], function() {
             return records;
         },
 
-        getWodRecordList: function () {
-            return this.wodRecordList;
+        getWodRecordList: function (noRecords) {
+            if(noRecords == undefined)
+                return this.wodRecordList;
+
+            //Return noRecords newest records
+            return this.wodRecordList.slice(0, noRecords);
         },
 
         getNoTimesCompleted: function (wodName) {
@@ -141,10 +145,10 @@ define("WodTracker", [], function() {
 
             nameRecordList.push(record);
             nameRecordList.sort(function (a, b) {
-                return a.time - b.time;
+                return b.dateCompleted - a.dateCompleted;
             });
 
-            this.storeToStorage(recordList);
+            this.storeToStorage();
         },
 
         clearStorage: function () {
