@@ -2,33 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2d1bb4c1-5992-40b7-ab92-994e4a0e7033" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/app/HomeView.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tabatatimer.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/images/check.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/images/goArrow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/images/info.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/images/reload.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/lib/require-2.1.6.min.js" />
       <change type="MOVED" beforePath="C:\Mobile\Projects\ProjectCrossFit\Resources\LocalFiles.bin" afterPath="$PROJECT_DIR$/../LocalFiles.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Resources/LocalFiles.bin" afterPath="$PROJECT_DIR$/../Resources/LocalFiles.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/AppMain.js" afterPath="$PROJECT_DIR$/js/app/AppMain.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/CompletedView.js" afterPath="$PROJECT_DIR$/js/app/CompletedView.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/Equipment.js" afterPath="$PROJECT_DIR$/js/app/Equipment.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/HistoryView.js" afterPath="$PROJECT_DIR$/js/app/HistoryView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/HtmlUtility.js" afterPath="$PROJECT_DIR$/js/app/HtmlUtility.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/LocalFiles.iml" afterPath="$PROJECT_DIR$/.idea/LocalFiles.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/TimerView.js" afterPath="$PROJECT_DIR$/js/app/TimerView.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/Wod.js" afterPath="$PROJECT_DIR$/js/app/Wod.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/WodLookup.js" afterPath="$PROJECT_DIR$/js/app/WodLookup.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/WodTracker.js" afterPath="$PROJECT_DIR$/js/app/WodTracker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/WodView.js" afterPath="$PROJECT_DIR$/js/app/WodView.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/completed.html" afterPath="$PROJECT_DIR$/completed.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/projectcrossfit-custom.css" afterPath="$PROJECT_DIR$/css/projectcrossfit-custom.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" afterPath="$PROJECT_DIR$/.idea/scopes/scope_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tabatatimer.html" afterPath="$PROJECT_DIR$/tabatatimer.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/timer.html" afterPath="$PROJECT_DIR$/timer.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/woddetail.html" afterPath="$PROJECT_DIR$/woddetail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/wods.html" afterPath="$PROJECT_DIR$/wods.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/lib/wormhole.js" afterPath="$PROJECT_DIR$/js/lib/wormhole.js" />
     </list>
@@ -49,7 +41,7 @@
     <file path="/Setup.js" changelist="2d1bb4c1-5992-40b7-ab92-994e4a0e7033" time="1370294610935" ignored="false" />
     <file path="/fragment.js2" changelist="2d1bb4c1-5992-40b7-ab92-994e4a0e7033" time="1370180979176" ignored="false" />
     <file path="/Timer.js" changelist="2d1bb4c1-5992-40b7-ab92-994e4a0e7033" time="1370294678680" ignored="false" />
-    <file path="/Dummy.txt" changelist="2d1bb4c1-5992-40b7-ab92-994e4a0e7033" time="1370432276185" ignored="false" />
+    <file path="/Dummy.txt" changelist="2d1bb4c1-5992-40b7-ab92-994e4a0e7033" time="1370713622711" ignored="false" />
     <file path="/EquipmentLookup.js" changelist="2d1bb4c1-5992-40b7-ab92-994e4a0e7033" time="1370417833419" ignored="false" />
     <file path="/WodLookup.js" changelist="2d1bb4c1-5992-40b7-ab92-994e4a0e7033" time="1370510261848" ignored="false" />
     <file path="/DateFormatter.js" changelist="2d1bb4c1-5992-40b7-ab92-994e4a0e7033" time="1370268289664" ignored="false" />
@@ -454,7 +446,11 @@
       <created>1370432286606</created>
       <updated>1370432286606</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Further JS refactoring - completedView">
+      <created>1370713671060</created>
+      <updated>1370713671060</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -466,7 +462,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32649574" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24274014" sideWeight="0.6017094" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24274014" sideWeight="0.6017094" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3982906" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270869" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
