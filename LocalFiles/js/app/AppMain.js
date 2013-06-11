@@ -1,5 +1,5 @@
-define("AppMain", ["HomeView", "EquipmentView", "WodView", "TimerView", "CompletedView", "WodTracker"],
-    function(HomeView, EquipmentView, WodView, TimerView, CompletedView, wodTracker) {
+define("AppMain", ["HomeView", "EquipmentView", "WodView", "TimerView", "CompletedView", "WodTracker", "ExerciseView"],
+    function(HomeView, EquipmentView, WodView, TimerView, CompletedView, wodTracker, ExerciseView) {
     var singleton = function () {
         return {
 
@@ -39,15 +39,24 @@ define("AppMain", ["HomeView", "EquipmentView", "WodView", "TimerView", "Complet
                     wodView.renderListHtml();
                 });
 
+                $(document).on("pagebeforeshow", "#exercisePage", function () {
+                    var exerciseView = new ExerciseView();
+                    exerciseView.renderListHtml();
+                });
+
                 $(document).on("pagebeforeshow", "#equipmentPage", function () {
                     var equipmentView = new EquipmentView();
                     equipmentView.renderListHtml();
                 });
 
-
                 $(document).on("pagebeforeshow", "#woddetailPage", function () {
                     var wodView = new WodView();
                     wodView.renderDetailHtml();
+                });
+
+                $(document).on("pagebeforeshow", "#exercisedetailPage", function () {
+                    var exerciseView = new ExerciseView();
+                    exerciseView.renderDetailHtml();
                 });
 
                 var timer = null;
