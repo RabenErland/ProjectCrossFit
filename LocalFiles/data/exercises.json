@@ -1,0 +1,33 @@
+{ "equipment": [
+{"Id":"1","Name":"atomic sit-up","ShortName":"atomicsitup","RequiredEquipment":"","TargetGroups":"core","Difficulty":"Beginner","Video":"","Description":"TODO","Icon":"atomicsitup.png"}
+,{"Id":"2","Name":"air squat","ShortName":"airsquat","RequiredEquipment":"","TargetGroups":"legs","Difficulty":"Beginner","Video":"","Description":"TODO","Icon":"airsquat.png"}
+,{"Id":"3","Name":"thruster","ShortName":"thruster","RequiredEquipment":"[weight lifting bar]","TargetGroups":"fullbody","Difficulty":"Intermediate","Video":"","Description":"TODO","Icon":"thruster.png"}
+,{"Id":"4","Name":"pull-up","ShortName":"pullup","RequiredEquipment":"[pull-up bar]","TargetGroups":"arms, shoulders, back","Difficulty":"Intermediate","Video":"","Description":"TODO","Icon":"pullup.png"}
+,{"Id":"5","Name":"Burpee","ShortName":"Burpee","RequiredEquipment":"","TargetGroups":"fullbody","Difficulty":"Beginner","Video":"","Description":"TODO","Icon":"Burpee.png"}
+,{"Id":"6","Name":"Boxjump","ShortName":"Boxjump","RequiredEquipment":"[Box]","TargetGroups":"legs","Difficulty":"Beginner","Video":"","Description":"TODO","Icon":"Boxjump.png"}
+,{"Id":"7","Name":"Toes to bar","ShortName":"Toestobar","RequiredEquipment":"[pull-up bar]","TargetGroups":"core","Difficulty":"Intermediate","Video":"","Description":"TODO","Icon":"Toestobar.png"}
+,{"Id":"8","Name":"Wallbal","ShortName":"Wallbal","RequiredEquipment":"[medicine ball]","TargetGroups":"legs, shoulder, arms","Difficulty":"Beginner","Video":"","Description":"TODO","Icon":"Wallbal.png"}
+,{"Id":"9","Name":"Benchpress","ShortName":"Benchpress","RequiredEquipment":"[Bench], [weight lifting bar]","TargetGroups":"","Difficulty":"Intermediate","Video":"","Description":"TODO","Icon":"Benchpress.png"}
+,{"Id":"10","Name":"Handstand pushup","ShortName":"Handstandpushup","RequiredEquipment":"","TargetGroups":"","Difficulty":"Expert","Video":"","Description":"TODO","Icon":"Handstandpushup.png"}
+,{"Id":"11","Name":"Goblet squat","ShortName":"Gobletsquat","RequiredEquipment":"[Kettlebell]","TargetGroups":"legs","Difficulty":"Beginner","Video":"","Description":"TODO","Icon":"Gobletsquat.png"}
+,{"Id":"12","Name":"Duble unders","ShortName":"Dubleunders","RequiredEquipment":"[Jump rope]","TargetGroups":"","Difficulty":"Intermediate","Video":"","Description":"TODO","Icon":"Dubleunders.png"}
+,{"Id":"13","Name":"Singles","ShortName":"Singles","RequiredEquipment":"[Jump rope]","TargetGroups":"","Difficulty":"Beginner","Video":"","Description":"TODO","Icon":"Singles.png"}
+,{"Id":"14","Name":"Russian swings","ShortName":"Russianswings","RequiredEquipment":"[Kettlebell]","TargetGroups":"","Difficulty":"Beginner","Video":"","Description":"TODO","Icon":"Russianswings.png"}
+,{"Id":"15","Name":"Turkish getup","ShortName":"Turkishgetup","RequiredEquipment":"","TargetGroups":"fullbody","Difficulty":"Beginner","Video":"","Description":"TODO","Icon":"Turkishgetup.png"}
+,{"Id":"16","Name":"Run","ShortName":"Run","RequiredEquipment":"","TargetGroups":"legs","Difficulty":"Beginner","Video":"","Description":"TODO","Icon":"Run.png"}
+,{"Id":"17","Name":"Kettlebell swing","ShortName":"Kettlebellswing","RequiredEquipment":"[Kettlebell]","TargetGroups":"core, arms, shoulder","Difficulty":"Beginner","Video":"","Description":"TODO","Icon":"Kettlebellswing.png"}
+,{"Id":"18","Name":"Snatch","ShortName":"Snatch","RequiredEquipment":"[weight lifting bar]","TargetGroups":"","Difficulty":"Expert","Video":"","Description":"TODO","Icon":"Snatch.png"}
+,{"Id":"19","Name":"Power snatch","ShortName":"Powersnatch","RequiredEquipment":"[weight lifting bar]","TargetGroups":"","Difficulty":"Expert","Video":"","Description":"TODO","Icon":"Powersnatch.png"}
+,{"Id":"20","Name":"Hang power snatch","ShortName":"Hangpowersnatch","RequiredEquipment":"[weight lifting bar]","TargetGroups":"","Difficulty":"Intermediate","Video":"","Description":"TODO","Icon":"Hangpowersnatch.png"}
+,{"Id":"21","Name":"Pistol","ShortName":"Pistol","RequiredEquipment":"","TargetGroups":"legs","Difficulty":"Intermediate","Video":"","Description":"TODO","Icon":"Pistol.png"}
+,{"Id":"22","Name":"Mountain climber","ShortName":"Mountainclimber","RequiredEquipment":"","TargetGroups":"legs","Difficulty":"Beginner","Video":"","Description":"TODO","Icon":"Mountainclimber.png"}
+,{"Id":"23","Name":"Dumbbell press","ShortName":"Dumbbellpress","RequiredEquipment":"[Bumbbell]","TargetGroups":"shoulder, arms","Difficulty":"Beginner","Video":"","Description":"TODO","Icon":"Dumbbellpress.png"}
+,{"Id":"24","Name":"Kettlebell snatch","ShortName":"Kettlebellsnatch","RequiredEquipment":"[Kettlebell]","TargetGroups":"core, arms, shoulder","Difficulty":"Beginner","Video":"","Description":"TODO","Icon":"Kettlebellsnatch.png"}
+,{"Id":"25","Name":"Rowing","ShortName":"Rowing","RequiredEquipment":"[Rowing machine]","TargetGroups":"fullbody","Difficulty":"Beginner","Video":"","Description":"TODO","Icon":"Rowing.png"}
+,{"Id":"26","Name":"Lunges","ShortName":"Lunges","RequiredEquipment":"","TargetGroups":"legs","Difficulty":"Beginner","Video":"","Description":"TODO","Icon":"Lunges.png"}
+,{"Id":"27","Name":"Push press","ShortName":"Pushpress","RequiredEquipment":"[weight lifting bar]","TargetGroups":"shoulder, arms","Difficulty":"Beginner","Video":"","Description":"TODO","Icon":"Pushpress.png"}
+,{"Id":"28","Name":"Back extension","ShortName":"Backextension","RequiredEquipment":"","TargetGroups":"back","Difficulty":"Beginner","Video":"","Description":"TODO","Icon":"Backextension.png"}
+,{"Id":"29","Name":"V-up","ShortName":"Vup","RequiredEquipment":"","TargetGroups":"core","Difficulty":"Beginner","Video":"","Description":"TODO","Icon":"Vup.png"}
+,{"Id":"30","Name":"Sit up","ShortName":"Situp","RequiredEquipment":"","TargetGroups":"core","Difficulty":"Beginner","Video":"","Description":"TODO","Icon":"Situp.png"}
+,{"Id":"31","Name":"Muscle up","ShortName":"Muscleup","RequiredEquipment":"[rings]","TargetGroups":"","Difficulty":"Expert","Video":"","Description":"TODO","Icon":"Muscleups.png"}
+] }
