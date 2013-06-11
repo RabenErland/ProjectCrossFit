@@ -31,7 +31,10 @@ define("WodLookup", ["Wod", "HtmlUtility"], function(Wod, htmlUtility) {
         },
 
         getRecommendedWod: function() {
-            return wodLookup[Math.floor(Math.random()*wodLookup.length)];
+
+            var i = Math.floor(Math.random()*(wodLookup.length-1)+1);
+            console.log("I: " + i)
+            return wodLookup[i];
         }
 
     }

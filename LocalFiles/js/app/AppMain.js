@@ -1,5 +1,5 @@
-define("AppMain", ["HomeView", "EquipmentView", "WodView", "TimerView", "CompletedView", "WodTracker"],
-    function(HomeView, EquipmentView, WodView, TimerView, CompletedView, wodTracker) {
+define("AppMain", ["HomeView", "EquipmentView", "WodView", "TimerView", "TabataTimerView", "CompletedView", "WodTracker"],
+    function(HomeView, EquipmentView, WodView, TimerView, TabataTimerView, CompletedView, wodTracker) {
     var singleton = function () {
         return {
 
@@ -71,6 +71,27 @@ define("AppMain", ["HomeView", "EquipmentView", "WodView", "TimerView", "Complet
                        if(timer != null) {
                            timer.resetTimer();
                        }
+                });
+
+                //Setup tabatatimer
+                var tabataTimer = null;
+
+                $(document).on("pagebeforeshow", "#tabataTimerPage", function () {
+                    tabataTimer = new TabataTimerView();
+                    tabataTimer.startTiming();
+
+                    //Bind to click
+                    $("#spanPauseResume").click(function() {
+                        tabataTimer.handlePauseResume();
+                    });
+
+                });
+
+                //Set timer clean-up
+                $(document).on("pagebeforehide", "#tabataTimerPage", function () {
+                    if(tabataTimer != null) {
+                        tabataTimer.resetTimer();
+                    }
                 });
 
                 //Setup completed render

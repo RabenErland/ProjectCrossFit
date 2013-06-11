@@ -19,6 +19,15 @@ define("HomeView", ["HistoryView", "WodView", "WodLookup"], function(HistoryView
             //get recommended WOD and render recommendation
             var wod = wodLookupGetter.getRecommendedWod();
 
+            if(wod === null || wod === undefined) {
+                var i = 01;
+            }
+
+
+            console.log("ID: " + wod.wodJson.Id)
+
+
+
             var wodView = new WodView();
             var html = wodView.getDetailHtml(wod, true);
 

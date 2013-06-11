@@ -37,7 +37,9 @@ define("WodView", ["WodLookup", "WodTracker", "HistoryView"],
                     var wod = res.wod;
 
                     //Set href on button
-                    $("#buttonStartWod").attr("href", "timer.html?id=" + res.id);
+                    var timerPageUrl = wod.wodJson.Type == "Tabata" ? "tabatatimer.html" : "timer.html";
+
+                    $("#buttonStartWod").attr("href", timerPageUrl + "?id=" + res.id);
 
                     //Insert exercise html
                     var html = this.getDetailHtml(wod);
@@ -60,6 +62,7 @@ define("WodView", ["WodLookup", "WodTracker", "HistoryView"],
             },
 
             getDetailHtml: function (wod, insertName) {
+
 
                 var remainingExerciseText = this.combineLines(wod.longFormatLines, 1, true);
 
