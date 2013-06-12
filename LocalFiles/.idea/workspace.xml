@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d1bb4c1-5992-40b7-ab92-994e4a0e7033" name="Default" comment="">
+    <list default="true" id="2d1bb4c1-5992-40b7-ab92-994e4a0e7033" name="Default" comment="Tabatatimer, corrected event-handling, corrections to data-sheet (consistent names)">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../LocalFiles.bin" afterPath="$PROJECT_DIR$/../LocalFiles.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app/Equipment.js" afterPath="$PROJECT_DIR$/js/app/Equipment.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/LocalFiles.iml" afterPath="$PROJECT_DIR$/.idea/LocalFiles.iml" />
@@ -34,7 +34,7 @@
     <file path="/Setup.js" changelist="2d1bb4c1-5992-40b7-ab92-994e4a0e7033" time="1370294610935" ignored="false" />
     <file path="/fragment.js2" changelist="2d1bb4c1-5992-40b7-ab92-994e4a0e7033" time="1370180979176" ignored="false" />
     <file path="/Timer.js" changelist="2d1bb4c1-5992-40b7-ab92-994e4a0e7033" time="1370294678680" ignored="false" />
-    <file path="/Dummy.txt" changelist="2d1bb4c1-5992-40b7-ab92-994e4a0e7033" time="1371062025635" ignored="false" />
+    <file path="/Dummy.txt" changelist="2d1bb4c1-5992-40b7-ab92-994e4a0e7033" time="1371062125397" ignored="false" />
     <file path="/EquipmentLookup.js" changelist="2d1bb4c1-5992-40b7-ab92-994e4a0e7033" time="1370417833419" ignored="false" />
     <file path="/WodLookup.js" changelist="2d1bb4c1-5992-40b7-ab92-994e4a0e7033" time="1370860339124" ignored="false" />
     <file path="/DateFormatter.js" changelist="2d1bb4c1-5992-40b7-ab92-994e4a0e7033" time="1370268289664" ignored="false" />
@@ -472,7 +472,11 @@
       <created>1371062048077</created>
       <updated>1371062048077</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Tabatatimer, corrected event-handling, corrections to data-sheet (consistent names)">
+      <created>1371062108119</created>
+      <updated>1371062108119</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -509,7 +513,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3270869" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32749563" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32627866" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
