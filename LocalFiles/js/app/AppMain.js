@@ -24,7 +24,6 @@ define("AppMain", ["HomeView", "EquipmentView", "WodView", "TimerView", "TabataT
                        e.stopPropagation();
                     });
 
-                    console.log("Setting up");
                     $("#goButton").click(function(e) {
                         console.log("Sending to: " + wodId);
                         homeView.sendToWodPage(wodId);
@@ -34,9 +33,12 @@ define("AppMain", ["HomeView", "EquipmentView", "WodView", "TimerView", "TabataT
                 });
 
                 // Bind to pagebeforecreate on wods and equipment
-                $(document).on("pagebeforeshow", "#wodPage", function () {
+                $(document).on("pagebeforeshow", "#wodPage", function (e) {
                     var wodView = new WodView();
                     wodView.renderListHtml();
+
+                    e.preventDefault();
+                    return false;
                 });
 
                 $(document).on("pagebeforeshow", "#exercisePage", function () {
@@ -50,9 +52,12 @@ define("AppMain", ["HomeView", "EquipmentView", "WodView", "TimerView", "TabataT
                 });
 
 
-                $(document).on("pagebeforeshow", "#woddetailPage", function () {
+                $(document).on("pagebeforeshow", "#woddetailPage", function (e) {
                     var wodView = new WodView();
                     wodView.renderDetailHtml();
+
+                    e.preventDefault();
+                    return false;
                 });
 
                 $(document).on("pagebeforeshow", "#exercisedetailPage", function () {
@@ -63,8 +68,9 @@ define("AppMain", ["HomeView", "EquipmentView", "WodView", "TimerView", "TabataT
                 var timer = null;
 
                 //Setup timer
-                $(document).on("pagebeforeshow", "#timerPage", function () {
+                $(document).on("pagebeforeshow", "#timerPage", function (e) {
                     timer = new TimerView();
+                    timer.renderInitialHtml();
 
                     //Bind to click
                     $("#spanPauseResume").click(function() {
@@ -76,6 +82,7 @@ define("AppMain", ["HomeView", "EquipmentView", "WodView", "TimerView", "TabataT
                     });
                 });
 
+
                 //Set timer clean-up
                 $(document).on("pagebeforehide", "#timerPage", function () {
                        if(timer != null) {
@@ -86,9 +93,11 @@ define("AppMain", ["HomeView", "EquipmentView", "WodView", "TimerView", "TabataT
                 //Setup tabatatimer
                 var tabataTimer = null;
 
-                $(document).on("pagebeforeshow", "#tabataTimerPage", function () {
+                $(document).on("pagebeforeshow", "#tabataTimerPage", function (e) {
                     tabataTimer = new TabataTimerView();
-                    tabataTimer.startTiming();
+                    tabataTimer.renderInitialHtml();
+
+                    console.log("DING");
 
                     //Bind to click
                     $("#spanPauseResume").click(function() {

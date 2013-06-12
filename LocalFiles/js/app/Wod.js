@@ -1,4 +1,4 @@
-define("Wod", [], function() {
+define("Wod", ["ExerciseLookup"], function(exerciseLookupGetter) {
 
     function Wod(wodJson) {
         this.wodJson = wodJson;
@@ -9,9 +9,8 @@ define("Wod", [], function() {
 
         this.parseExerciseText();
 
-        this.requiredEquipmentNames = [];
-
         this.parseRequiredEquipment();
+
     }
 
     Wod.getLookupStorageKey = function (wodId) {
@@ -78,13 +77,39 @@ define("Wod", [], function() {
         return this.wodJson.Name;
     };
 
-    Wod.prototype.parseRequiredEquipment = function() {
-          //TODO
-        //For each exercise - get list of required equipment names from ExerciseLookup
-        //combine to distinct list
+    Wod.prototype.isTabata = function () {
+        return this.wodJson.Type == "Tabata";
+    };
 
+    Wod.prototype.parseRequiredEquipment = function () {
+        //TODO
+        var equipmentSet = {};
+        var exerciseNameLookup = exerciseLookupGetter.getNameLookup();
 
-    }
+        for(var i=0; i<this.exerciseNames.length; i++) {
+            var exerciseName = this.exerciseNames[i].toLowerCase();
+
+            //Get required equipment of each exercise
+            var exercise = exerciseNameLookup[exerciseName];
+            if(exercise != null && exercise != undefined) {
+                var equipmentNames = exercise.getRequiredEquipmentNames();
+
+                //Add to set
+                for(var j=0; j<equipmentNames.length; j++) {
+                    var equipmentName = equipmentNames[j];
+                    equipmentSet[equipmentName] = true;
+                }
+            }
+            else {
+                var errorText = "Invalid exercise name (" + exerciseName + ") in WOD (" + this.getName() + ")";
+             //   throw errorText;
+                  console.log(errorText);
+            }
+        }
+
+        //extract distinct names from "set" object
+        this.requiredEquipmentNames = Object.keys(equipmentSet);
+    };
 
     return Wod;
 });

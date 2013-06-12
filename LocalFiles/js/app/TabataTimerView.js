@@ -1,21 +1,54 @@
-define("TabataTimerView", ["WodLookup"], function(wodLookupGetter) {
+define("TabataTimerView", ["WodLookup", "WodTracker", "WodView"], function(wodLookupGetter, wodTracker, WodView) {
 
     var TabataTimer = function () {
 
-        var res = wodLookupGetter.getWodFromQueryParamId();
-        this.wod = res.wod;
+        this.wodAndId = wodLookupGetter.getWodFromQueryParamId();
+        this.exerciseNames = this.wodAndId.wod.exerciseNames;
 
-        this.exerciseSeconds = 20;
-        this.restSeconds = 5;
-        this.noRounds = 8;
+        var wodJson = this.wodAndId.wod.wodJson;
+
+        //Read Tabata params from Wod
+        this.exerciseSeconds = parseInt(wodJson.Work);
+        this.restSeconds = parseInt(wodJson.Rest);
+        this.noRounds = parseInt(wodJson.Rounds);
         this.setIntervalId = null;
 
-        this.divCurrentText = $("#divCurrentText");
-        this.divNextUpText = $("#divNextUpText");
-        this.divSeconds = $("#divSeconds");
+        //Cache selectors and audio reference
+        this.divCurrentText = $("#divTabataCurrentText");
+        this.divNextUpText = $("#divTabataNextUpText");
+        this.divSeconds = $("#divTabataSeconds");
+        this.divTimerRounds = $("#divTabataTimerRounds");
+        this.spanPauseResume = $("#spanTabataPauseResume");
         this.beepAudio = $('audio')[0];
 
+        //Reset
         this.resetTimer();
+    };
+
+    TabataTimer.prototype.renderInitialHtml = function () {
+
+        this.injectRoundHtml();
+
+        //Set header
+        $("#tabataTimerHeader").text(this.wodAndId.wod.getName().toUpperCase() + " in progress");
+
+        //Set single line description
+        var wodView = new WodView();
+        var wodHtml = wodView.getExerciseHtmlOnly(this.wodAndId.wod);
+
+        $("#divTabataExercises").html(wodHtml);
+
+        this.renderTexts();
+        this.renderTime();
+    };
+
+    TabataTimer.prototype.injectRoundHtml = function () {
+        var html = "Rounds ";
+        for (var i = 0; i < this.noRounds; i++) {
+            html += "<div>" + (i + 1) + "</div>"
+        }
+
+        this.divTimerRounds.html(html);
     };
 
     TabataTimer.prototype.resetTimer = function () {
@@ -23,21 +56,22 @@ define("TabataTimerView", ["WodLookup"], function(wodLookupGetter) {
         this.currentRound = 1;
         this.isResting = false;
         this.currentSeconds = this.exerciseSeconds;
-        this.currentText = this.wod.exerciseNames[0];
+        this.currentText = this.exerciseNames[0];
         this.nextText = "Rest";
+        this.isPaused = true;
 
         if (this.setIntervalId != null) {
             clearInterval(this.setIntervalId);
             this.setIntervalId = null;
         }
-
-        this.renderTexts();
-        this.renderTime();
     };
 
     TabataTimer.prototype.renderTexts = function () {
-        this.divCurrentText.html("<strong>" + this.currentText + "</strong>");
-        this.divNextUpText.html("<i>Next up: " + this.nextText + "</i>");
+        this.divCurrentText.html(this.currentText);
+        this.divNextUpText.html("Next up: " + this.nextText);
+
+        var rounds = this.divTimerRounds.children();
+        rounds.slice(0, this.currentRound).addClass("tabata-timer-round-enabled");
     };
 
     TabataTimer.prototype.renderTime = function () {
@@ -45,25 +79,28 @@ define("TabataTimerView", ["WodLookup"], function(wodLookupGetter) {
         this.divSeconds.html(secondsText + "<span>sec</span>");
     };
 
-    TabataTimer.prototype.startTiming = function() {
+    TabataTimer.prototype.startTiming = function () {
         var that = this;
 
-        setInterval(function() {
+        that.setIntervalId = setInterval(function () {
             that.secondsPassed++;
             that.currentSeconds--;
 
-            if(that.currentSeconds == 0) {
+            if (that.currentSeconds == 0) {
 
-                if(that.isResting) {
-                    //Shift from rest to exercise
-                    that.isResting = false;
-                    that.currentRound++; //TODO: Update html
-
-                    if(that.currentRound > that.noRounds) {
-                        //TODO: Handle end of Tabata
+                if (that.isResting) {
+                    if (that.currentRound == that.noRounds) {
+                        that.handleComplete();
+                        console.log("Completed: " +that.currentRound);
+                        return;
                     }
 
-                    that.currentText = that.wod.exerciseNames[that.currentRound-1];
+                    //Shift from rest to exercise
+                    that.isResting = false;
+                    that.currentRound++;
+
+                    var index = (that.currentRound - 1) % that.exerciseNames.length;
+                    that.currentText = that.exerciseNames[index];
                     that.nextText = "Rest";
                     that.currentSeconds = that.exerciseSeconds;
                 }
@@ -72,7 +109,8 @@ define("TabataTimerView", ["WodLookup"], function(wodLookupGetter) {
                     that.isResting = true;
 
                     that.currentText = "Rest";
-                    that.nextText = that.wod.exerciseNames[that.currentRound];
+                    var index = (that.currentRound) % that.exerciseNames.length;
+                    that.nextText = that.currentRound == that.noRounds ? "WOD complete" : that.exerciseNames[index];
                     that.currentSeconds = that.restSeconds;
                 }
 
@@ -81,7 +119,7 @@ define("TabataTimerView", ["WodLookup"], function(wodLookupGetter) {
             }
 
             //Play sound on last three seconds
-            if(that.currentSeconds <= 3) {
+            if (that.currentSeconds <= 3) {
                 //Play beep
                 that.beepAudio.play();
             }
@@ -89,8 +127,37 @@ define("TabataTimerView", ["WodLookup"], function(wodLookupGetter) {
             //Update second counter
             that.renderTime();
 
-        },1000);
+        }, 1000);
 
+    };
+
+    TabataTimer.prototype.handleComplete = function () {
+
+        var date = new Date();
+        var time = this.secondsPassed;
+        wodTracker.addWodRecord(this.wodAndId.wod.getName(), date, time);
+        this.resetTimer();
+
+        $.mobile.changePage("completed.html?id=" + this.wodAndId.id);
+    };
+
+    TabataTimer.prototype.pauseTiming = function () {
+        //Pause timer
+        clearInterval(this.setIntervalId);
+    };
+
+    TabataTimer.prototype.handlePauseResume = function () {
+
+        if (this.isPaused) {
+            this.startTiming();
+            this.isPaused = false;
+        }
+        else {
+            this.pauseTiming();
+            this.isPaused = true;
+        }
+
+        this.spanPauseResume.toggleClass('play-icon').toggleClass('pause-icon');
     };
 
     return TabataTimer;

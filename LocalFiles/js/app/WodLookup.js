@@ -4,7 +4,8 @@ define("WodLookup", ["Wod", "HtmlUtility"], function(Wod, htmlUtility) {
     $.ajax({
         dataType : "json",
         url : "data/wods.json",
-        async : false
+        async : false,
+        cache : false
     }).done(function(result) {
             wodList = result.wods;
         });

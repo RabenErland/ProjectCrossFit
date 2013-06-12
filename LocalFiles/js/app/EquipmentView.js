@@ -17,7 +17,7 @@ define("EquipmentView", ["Equipment", "EquipmentLookup"], function(Equipment, eq
                         html += this.getSingleItemListHtml(eq);
                     }
 
-                    $(html).appendTo("#equipmentList");
+                    $("#equipmentList").html(html);
 
                     //Refresh JQM Listview (to apply JQM styling)
                     $('#equipmentList').listview('refresh');

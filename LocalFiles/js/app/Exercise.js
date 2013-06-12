@@ -79,11 +79,21 @@ define("Exercise", [], function() {
     };
 
     Exercise.prototype.parseRequiredEquipment = function() {
-        //TODO
-        //For each exercise - get list of required equipment names from ExerciseLookup
-        //combine to distinct list
+        this.requiredEquipmentNames = []
 
+        var text = this.exerciseJson.RequiredEquipment;
 
+        var bracketRegex = /(\[.+?\])/g;  //locate all square brackets
+
+        var m;
+        while (m = bracketRegex.exec(text)) {
+            var matchText = m[0];
+            this.requiredEquipmentNames.push(matchText);
+        }
+    }
+
+    Exercise.prototype.getRequiredEquipmentNames = function() {
+        return this.requiredEquipmentNames;
     }
 
     return Exercise;

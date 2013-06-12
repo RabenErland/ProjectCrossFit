@@ -192,6 +192,11 @@
 	text-transform: capitalize !important;
 	padding-top: 0.2em !important;
 	padding-bottom: 0.2em !important;
+    border-bottom-width: 0 !important;
+}
+
+.ui-li-custom-equipment:last-child {
+    border-bottom-width: 1px !important;
 }
 
 .checkmark-image-overlay {
@@ -273,8 +278,63 @@
     margin-top: 20px;
 }
 
+.tabata-timer-current {
+    width:100%;
+    text-align: center;
+    font-size:28px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
 
-.styled div {
+
+.tabata-timer-next {
+    width:100%;
+    text-align: center;
+    font-size:16px;
+    padding-bottom: 20px;
+    font-style: italic;
+    text-transform: capitalize;
+}
+
+.tabata-timer-rounds {
+    margin: 0 auto;
+    width:100%;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.tabata-timer-round-enabled {
+    background-color: #387bbe !important;
+}
+
+.tabata-timer-rounds div {
+    display:inline-block;
+    width:25px;
+    height:25px;
+    border-radius:360px;
+    background-color: lightgray;
+    line-height: 25px;
+    text-align: center;
+    color:white;
+    text-shadow: none;
+    font-weight: bold;
+    margin: 0 1px 0 1px;
+}
+
+.timerExerciseText {
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.timer-digits {
+    width:100%;
+    text-align: center;
+    font-size:42px;
+    font-weight: 100;
+}
+
+.timer-digits div {
     display: inline-block;
     margin-left: 10px;
     font-size: 60px;
@@ -283,7 +343,7 @@
     text-align: right;
 }
 
-.styled div span {
+.timer-digits div span {
     display: block;
     border-top: 1px solid #cecece;
     padding-top: 3px;
@@ -293,7 +353,7 @@
     text-align: right;
 }
 
-.styled span {
+.timer-digits span {
     display: block;
     padding-top: 3px;
 }
@@ -308,4 +368,13 @@
     -webkit-margin-before:0.5em;
     -webkit-margin-after:0.5em;
     font-size: 16px;
+}
+
+/* Overwrite JQM min-height to avoid unnecessary scroll bars */
+[data-role="page"] {
+    min-height: 100px !important;
+}
+
+.ui-body-c {
+    border: 0 !important;
 }

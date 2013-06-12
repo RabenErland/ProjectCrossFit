@@ -4,7 +4,8 @@ define("EquipmentLookup", ["Equipment"], function(Equipment) {
     $.ajax({
         dataType : "json",
         url : "data/equipment.json",
-        async : false
+        async : false,
+        cache : false
     }).done(function(result) {
             equipmentList = result.equipment;
         });

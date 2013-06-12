@@ -21,7 +21,7 @@ define("WodView", ["WodLookup", "WodTracker", "HistoryView"],
                         html += this.getSingleItemListHtml(wod);
                     }
 
-                    $(html).appendTo("#wodList");
+                    $("#wodList").html(html);
                 }
 
                 //Refresh JQM Listview (to apply JQM styling)
@@ -37,13 +37,13 @@ define("WodView", ["WodLookup", "WodTracker", "HistoryView"],
                     var wod = res.wod;
 
                     //Set href on button
-                    var timerPageUrl = wod.wodJson.Type == "Tabata" ? "tabatatimer.html" : "timer.html";
+                    var timerPageUrl = wod.isTabata() ? "tabatatimer.html" : "timer.html";
 
                     $("#buttonStartWod").attr("href", timerPageUrl + "?id=" + res.id);
 
                     //Insert exercise html
                     var html = this.getDetailHtml(wod);
-                    $(html).prependTo("#divExercises");
+                    $("#divExercises").html(html);
 
                     //Insert header text
                     $('#wodDetailHeader').text(wod.getName().toUpperCase());
@@ -51,7 +51,9 @@ define("WodView", ["WodLookup", "WodTracker", "HistoryView"],
                     var historyView = new HistoryView();
 
                     //Insert personal best
-                    var bestHtml = historyView.renderPersonalBestHtml(wod.getName());
+                    if(!wod.isTabata()) {
+                        var bestHtml = historyView.renderPersonalBestHtml(wod.getName());
+                    }
 
                     //Insert history table content and header
                     var historyHtml = historyView.renderWodHistoryHtml(wod.getName());

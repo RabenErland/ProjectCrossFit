@@ -21,7 +21,7 @@ define("ExerciseView", ["ExerciseLookup"],
                         html += this.getSingleItemListHtml(exercise);
                     }
 
-                    $(html).appendTo("#exerciseList");
+                    $("#exerciseList").html(html);
                 }
 
                 //Refresh JQM Listview (to apply JQM styling)
