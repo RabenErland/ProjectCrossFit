@@ -372,7 +372,7 @@
 
 /* Overwrite JQM min-height to avoid unnecessary scroll bars */
 [data-role="page"] {
-    min-height: 100px !important;
+   /* min-height: 100px !important;*/
 }
 
 .ui-body-c {

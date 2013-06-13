@@ -100,7 +100,7 @@ define("AppMain", ["HomeView", "EquipmentView", "WodView", "TimerView", "TabataT
                     console.log("DING");
 
                     //Bind to click
-                    $("#spanPauseResume").click(function() {
+                    $("#spanTabataPauseResume").click(function() {
                         tabataTimer.handlePauseResume();
                     });
 
